@@ -14,8 +14,10 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
+
         //return length of input string
-  return string.length;
+    return string.length;
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -24,16 +26,22 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-return string.toLowerCase();
+
+        //return lowercase "string"
+    return string.toLowerCase();
+
     // YOUR CODE ABOVE HERE //
 }
 
 /**
  * Given an input String, return a new String forced to uppercase.
  */
-function toUpperCase(string) {
+ function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
-return string.toUpperCase();
+
+        //return uppercase string
+    return string.toUpperCase()
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -50,10 +58,13 @@ return string.toUpperCase();
  *
  *      See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Using_global_and_ignore_with_replace()
  */
-function toDashCase(string) {
+ function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-    var lowerCaseString = string.toLowerCase();
-    return lowerCaseString.replace(" ", "-");
+
+      //lower the case of the letters in the string
+      var lowerCaseString = string.toLowerCase();
+      // replace the spaces with dashes
+      return lowerCaseString.replace(/[" "]/g,"-");
 
     // YOUR CODE ABOVE HERE //
 }
@@ -70,10 +81,16 @@ function toDashCase(string) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
-function beginsWith(string, char) {
+ function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-if (string[0] = char){return true}
-else {return false}
+
+      // change case of string and char to lower case
+    var lowerCaseString = string.toLowerCase();
+    var lowerCaseChar = char.toLowerCase();
+      //compare first letter of string to char
+    if (lowerCaseString[0] === lowerCaseChar){return true}
+    else {return false}
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -89,10 +106,16 @@ else {return false}
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
-function endsWith(string, char) {
+ function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-if (string[string.length-1] === char) {return true}
-else{return false}
+
+      // change case of string and char to lower case
+    var lowerCaseString = string.toLowerCase();
+    var lowerCaseChar = char.toLowerCase();
+      //compare last letter of string to char
+    if (lowerCaseString[lowerCaseString.length-1] === lowerCaseChar){return true}
+    else {return false}
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -103,6 +126,8 @@ else{return false}
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+
+        //add "stringOne" to "stringTwo" using concatenate operator
 return stringOne += stringTwo;
 }
     // YOUR CODE ABOVE HERE //
@@ -118,13 +143,15 @@ return stringOne += stringTwo;
  * TIP: This Function pulls out all the arguments passed to it and stores them
  *      in an Array called args.
  */
-function join(stringOne, stringTwo) {
+ function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    var args = Array.from(arguments);
-    return join(args);
 
+  var arg = Array.prototype.join.call(arguments);
+  return arg;
+  
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given two Strings, return the longest of the two.
@@ -137,8 +164,6 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-if (length.stringOne > length.stringTwo){
-
 
     // YOUR CODE ABOVE HERE //
 }
