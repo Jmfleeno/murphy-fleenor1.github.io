@@ -106,7 +106,7 @@ function toLowerCase(string) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
- function beginsWith(string, char) {
+ function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
       // change case of string and char to lower case
@@ -146,9 +146,15 @@ return stringOne += stringTwo;
  function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-  var arg = Array.prototype.join.call(arguments);
-  return arg;
-  
+        //create array of strings in function parameters
+    var arg = Array.form(arguments);
+        //create a variable for new string
+    var outputString = "";
+        //loop strings in "arg" array into single string
+    for(var i = 0; i < arg.length; i++) {
+      outputString += arg[i];
+  }
+  return outputString;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -165,6 +171,13 @@ return stringOne += stringTwo;
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
+        //create if statement to compare parameter lengths
+     if (stringOne.length > stringTwo.length){
+        return stringOne
+      } else if (stringTwo.length > stringOne.length) {
+        return stringTwo
+      }
+    
     // YOUR CODE ABOVE HERE //
 }
 
@@ -178,7 +191,10 @@ function longest(stringOne, stringTwo) {
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+        //create var to store localCompare answer
+    var answer = stringTwo.localeCompare(stringOne);
+        //return answer
+    return answer;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -194,8 +210,10 @@ function sortAscending(stringOne, stringTwo) {
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
-
+        //compare stringOne and stringTwo
+        var answer = stringOne.localeCompare(stringTwo);
+        //return answer
+    return answer;
 
     // YOUR CODE ABOVE HERE //
 }
