@@ -147,7 +147,7 @@ return stringOne += stringTwo;
     // YOUR CODE BELOW HERE //
 
         //create array of strings in function parameters
-    var arg = Array.form(arguments);
+    var arg = Array.from(arguments);
         //create a variable for new string
     var outputString = "";
         //loop strings in "arg" array into single string
