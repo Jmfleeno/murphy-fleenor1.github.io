@@ -13,10 +13,11 @@
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
   
-    //start a for loop to go through the array starting from index 0
-  for (var i = array[0]; i <= array.length; i++) {
-    //log all elements of array
+    //start for loop to run through array
+  for (var i = 0; i < array.length; i++) {
+    //log each element of array
     console.log(array[i]);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -28,10 +29,11 @@ function printArrayValues(array) {
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
   
-   //start a for loop to go through the array starting from the end
+    //start for loop to run through array
   for (var i = array.length-1; i >= 0; i--) {
-   //log all elements of array
-    console.log(i);
+    //log each element of array
+    console.log(array[i]);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -42,13 +44,10 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-    //create an array for the object keys
-  var exArray = [];
-    //create a for in loop to run through all the keys of the object
-  for (var key in object) {
-    //add object keys to new array 
-    exArray += key;
-  }
+    //create array "exArr", fill with "object" keys
+  var exArr = Object.keys(object);
+    //log array "exArr"
+  console.log(exArr);
   
   // YOUR CODE ABOVE HERE //
 }
@@ -60,10 +59,11 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-    //loop through object
-  for(var key in object) {
-    //print keys using console.log
+    //create for in loop to go through object
+  for (var key in object) {
+    //console log all keys
     console.log(key);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -74,8 +74,10 @@ function printObjectKeys(object) {
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+    //create array "exArr", fill with "object"s value
+  var exArr = Object.values(object);
+    //log array "exArr"
+  console.log(exArr);
   
   // YOUR CODE ABOVE HERE //
 }
@@ -87,8 +89,11 @@ function getObjectValues(object) {
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+      //create for in loop to go through object
+      for (var key in object) {
+        //console log all objects
+        console.log(object.key);
+      }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -99,8 +104,10 @@ function printObjectValues(object) {
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+    //create variable and fill with number of key/value pairs
+  var size = Object.keys(object).length;
+    //return the ver "size"
+  return size;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -112,7 +119,7 @@ function getObjectLength(object) {
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
   
-  
+
   
   
   // YOUR CODE ABOVE HERE //
