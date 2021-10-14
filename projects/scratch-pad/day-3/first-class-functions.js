@@ -14,8 +14,11 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    //return a function with value as parameter
+    return function(value){
+        //return if a value is greater than a base
+        return (value > base);
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -28,8 +31,15 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    //if statement determining if base is a string
+    if (typeof base === number){
+        //if string; test if length of base is greater than given value
+        return function(number, base){return base.length < givNum};
+    //else if statement determining if base is a number
+    } else if (typeof base === number){
+        //if number; test if base is greater than given value
+        return function(number, base){return base < givNum};
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -41,10 +51,13 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+   
+   //return a function with parameters "startsWith" and "string" 
+   return function(startsWith, string){
+       //function returns if startsWith is strictly equal to the last index of string
+       return startsWith === string[0]; 
+   }
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -56,8 +69,11 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+   //return a function with parameters "startsWith" and "string" 
+   return function(startsWith, string){
+       //function returns if startsWith is strictly equal to the last index of string 
+       return startsWith === string[string.length-1]; 
+   }
     
     // YOUR CODE ABOVE HERE //
 }
