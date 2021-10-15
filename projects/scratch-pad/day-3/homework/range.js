@@ -40,13 +40,9 @@ function range(start, end) {
                 outputArray.push(i);}     
             //return output array variable
     return outputArr;
-            
-         
-    
-    //set up sample tests
-    var sampleTest = range(8, 14);
-    var sampleTest2 = range(14, 8);
-    
+    }
+}   
+
     // YOUR CODE GOES ABOVE HERE //
 }
 

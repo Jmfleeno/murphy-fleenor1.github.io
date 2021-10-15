@@ -49,7 +49,7 @@ function getObjectKeys(object) {
     for (var key in object) {
       objArr.push(key);
     }
-  (objArr);
+  return (objArr);
   
   // YOUR CODE ABOVE HERE //
 }
@@ -84,7 +84,7 @@ function getObjectValues(object) {
       objArr.push(object[key]);
     }
     //log array of object values
-  console.log(objArr);
+  return (objArr);
   
   // YOUR CODE ABOVE HERE //
 }

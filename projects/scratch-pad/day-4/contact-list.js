@@ -34,16 +34,47 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
-function makeContact(id, nameFirst, nameLast) {
 
+// create a factory function “makeContact”
+//include parameters “id”, “nameFirst", “nameLast"
+function makeContact(id, nameFirst, nameLast) {
+    // return contact object
+    return {
+        id: id,
+        nameFirst: nameFirst,
+        nameLast: nameLast
+    }
 } 
 
+//create a factory function “makeContactList”
+function makeContactList(id, nameFirst, nameLast) {
+    //create an array "contacts" to hold "contact" objects
+    var contactList = [];
+    //returns an object that manages contacts
+    return {
+        id: id,
+        nameFirst: nameFirst,
+        nameLast: nameLast,
+        // include function “length()” 
+        length:function() {
+            // which returns the number of "contact" objects within array "contactList"
+            return contactList.length;
+        },
+        //include “findContact(fullName)” - takes full name string and 
+        addContact: function()) {
+            //returns "contact" object if fullName is found in array "contactList"
+            contacts.push(contact); 
+            //returns undefined if fullName is not found in array "contactList"
+        },
+        // "removeContact(contact)”
+         2: function() {
+            //code for method
+        }
+    
 
-function makeContactList() {
-    /*
-     * You need something here to hold contacts. See length api for a hint:
-     */
-    var contacts;
+
+    }
+    }
     
     return {
         // we implemented the length api for you //

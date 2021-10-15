@@ -12,12 +12,17 @@
  * TIP: In JavaScript, how can we decipher if a value is an Array? Can typeof
  * work?
  */
-function isArray(value) {
+ function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    //return if value is equal to array
-    return (Array.isArray(value));
-    
+
+    //create if statement to check if value is an array
+    if (Array.isArray(value)) {
+        //return true if value is equal to array
+        return true;
+        // return false if value is not equal to array
+    } else {
+        return false;
+  }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -34,12 +39,12 @@ function isObject(value) {
     // YOUR CODE BELOW HERE //
     
     //if value is an object and is not an array, date, or null
-    if(typeof vale === "object" && Array.isArray(value) === false && value !== null && instanceof Date === false){
+    if(typeof value === "object" && Array.isArray(value) === false && value !== null && instanceof Date === false){
         //retrun true
         return true;
     //return false if not
     } else {
-        return false
+        return false;
     }
     // YOUR CODE ABOVE HERE //
 }
@@ -54,15 +59,13 @@ function isCollection(value) {
     // YOUR CODE BELOW HERE //
     
     //if value is an object and is not an, date, or null (arrays are technically objects!)
-    if(typeof vale === "object" && value !== null && instanceof Date === false){
+    if(typeof value === "object" && value !== null && instanceof Date === false){
         //retrun true
         return true;
     //return false if not
     } else {
         return false
     }
-    // YOUR CODE ABOVE HERE //
-}
     
     // YOUR CODE ABOVE HERE //
 }
@@ -89,9 +92,27 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
-    //return value type
-    return typeof value;
-    
+    //if value === array
+    if ((Array.isArray(value)){
+        //return "array"
+        return "array";
+    //if value === object literal
+    } else if (typeof value === "object" && Array.isArray(value) === false && value !== null && instanceof Date === false){
+    //retrun "object"
+        return "object";
+    //if value === null
+    } else if (value === null){    
+        //return "null"
+        return "null";
+    //if value === date
+    } else if (instanceof Date === true){
+        //return "date"
+        return "date";
+    //else 
+    } else {
+        //return the type of value 
+        return typeof value;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
