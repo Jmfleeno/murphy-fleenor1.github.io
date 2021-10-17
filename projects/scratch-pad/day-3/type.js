@@ -39,11 +39,11 @@ function isObject(value) {
     // YOUR CODE BELOW HERE //
     
     //if value is an object and is not an array, date, or null
-    if(typeof value === "object" && Array.isArray(value) === false && value !== null && instanceof Date === false){
-        //retrun true
+    if (Object.prototype.toString.call(value) !== '[object Date]' && value !== null && Array.isArray(value) === false && typeof value === 'object') {
+        //return true
         return true;
-    //return false if not
     } else {
+        //else return false
         return false;
     }
     // YOUR CODE ABOVE HERE //
@@ -59,12 +59,12 @@ function isCollection(value) {
     // YOUR CODE BELOW HERE //
     
     //if value is an object and is not an, date, or null (arrays are technically objects!)
-    if(typeof value === "object" && value !== null && instanceof Date === false){
-        //retrun true
+    if (Object.prototype.toString.call(value) !== '[object Date]' && value !== null && typeof value === 'object') {
+        //return true
         return true;
-    //return false if not
     } else {
-        return false
+        //else return false
+        return false;
     }
     
     // YOUR CODE ABOVE HERE //
@@ -93,11 +93,11 @@ function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
     //if value === array
-    if ((Array.isArray(value)){
+    if (Array.isArray(value)){
         //return "array"
         return "array";
     //if value === object literal
-    } else if (typeof value === "object" && Array.isArray(value) === false && value !== null && instanceof Date === false){
+    } else if (Object.prototype.toString.call(value) !== '[object Date]' && value !== null && Array.isArray(value) === false && typeof value === 'object') {
     //retrun "object"
         return "object";
     //if value === null
@@ -105,7 +105,7 @@ function typeOf(value) {
         //return "null"
         return "null";
     //if value === date
-    } else if (instanceof Date === true){
+    } else if (Object.prototype.toString.call(value) === '[object Date]'){
         //return "date"
         return "date";
     //else 
