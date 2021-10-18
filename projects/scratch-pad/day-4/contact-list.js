@@ -70,8 +70,6 @@ function makeContactList(id, nameFirst, nameLast) {
          2: function() {
             //code for method
         }
-    
-
 
     }
     }
