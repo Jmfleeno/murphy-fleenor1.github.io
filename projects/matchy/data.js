@@ -23,6 +23,7 @@ animal.noises = [];
 //console.log object "animal" 
 console.log(animal);
 
+
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -43,6 +44,7 @@ console.log(noises[noises.length]);
 //print the array "noises"
 console.log(noises);
 
+
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -53,6 +55,7 @@ animal.noises = noises;
 animal["noises"].push("shout");
 //print object "animal"
 console.log(animal);
+
 
 /* *******************************************************************
  * Step 4 - Review
@@ -110,6 +113,7 @@ animals.push(lion);
 //print array "animals"
 console.log(animals);
 
+
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -119,27 +123,21 @@ console.log(animals);
 //create an array "friends" 
 var friends = [];
 //create a function "getRandom" that takes array "animal" and returns a random value from the array
-function getRandom(arr, min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return arr[Math.floor(Math.random() * (max - min) + min)];
+function getRandom(arr) {
+  return Math.floor(Math.random() * arr.length);
 };
 //push a random value from array "animals" in the array "friends" using the function "getRandom"
-friends.push(getRandom(animals, 0, animals.length-1));
+friends.push(animals[getRandom(animals)].name;
 //print array "friends"
 console.log(friends);
 //add array "friends" as a property of object "duck" under the key "friends"
-duck["friends"] = friends;
-//print object "duck"
-console.log(duck);
+animals[getRandom(animals)].friends = "friends";
 
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
  */
-
-
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
