@@ -59,7 +59,15 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    // create array "wordsArr" that hold all the words within the parameter "string" 
+    let wordsArr = string.split(" ");
+    // loop through "wordsArr" 
+    for (let i = 0; i < wordsArr.length; i++) {
+        // capitilie the first letter of each word
+        wordsArr[i] = wordsArr[i][0].toUpperCase() + wordsArr[i].substr(1);
+    }
+     // join back the words from array "wordsArr" array to form a string
+    return wordsArr.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -67,7 +75,7 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+    return `Welcome ${capitalizeWord(object.name)}!`;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -75,7 +83,7 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+    return `${capitalizeWord(object.name)} is a ${capitalizeWord(object.species)}`;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -83,7 +91,12 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+    if (object.noises && object.noises.length !== 0) {
+        var noisesArr =  object.noises.join(" ");
+        return noisesArr;
+    } else {
+        return `there are no noises`;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -91,7 +104,16 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+// create array "strWords" for words within parameter "string"
+    var strWords = string.split(" ");
+// loop through array "strWords" checking for parameter "word"
+    for (let i = 0; i < strWords.length; i++) {
+        if (word === strWords[i]){
+            // return ture if word is in array 
+            return true;
+        }
+    }
+return false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -99,15 +121,31 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
-}
+    // add parameter "name" to property "friends" of parameter "object"
+    object.friends.push(name);
+    // return parameter "object"
+    return object;
+} 
 
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    // if there is no "friends" property within parameter "object"
+    if (object.friends === undefined){
+        return false;
+    }
+    // loop through "friends" property of parameter "object"
+    for(var i = 0; i < object.friends.length; i++){
+    // if parameter "name" matches a value within the "friends" property of "object":
+        if(name === object.friends[i]){
+            //return true
+            return true;
+        } 
+    }
+    //else return false
+    return false
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -115,7 +153,18 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+    // create array "arrFriends" for the properties in "friends" of parameter "name"
+    var arrFriends = name.friends;
+    // loop through "arrFriends" array
+    for(var i = 0; i < arrFriends.length; i++){
+    // if the iteration of array "arrFriends" does not matches a value within the parameter "array":
+        if(name === object.friends[i]){
+            //return true
+            return true;
+        } 
+    }
+    //else return false
+    return false
 }
 
 //////////////////////////////////////////////////////////////////////
