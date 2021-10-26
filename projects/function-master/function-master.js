@@ -22,8 +22,9 @@ function keysToString(object) {
 function valuesToString(object) {
     let valArr = [];
     for (var key in object) {
-        if (typeof object[key] === "string")
+        if (typeof object[key] === "string"){
             valArr.push(object[key]);
+        }
         } 
         return valArr.join(" ");
     } 
@@ -152,36 +153,43 @@ function isFriend(name, object) {
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function nonFriends(name, array) {
-    // create array "arrFriends" for the properties in "friends" of parameter "name"
-    var arrFriends = name.friends;
-    // loop through "arrFriends" array
-    for(var i = 0; i < arrFriends.length; i++){
-    // if the iteration of array "arrFriends" does not matches a value within the parameter "array":
-        if(name === object.friends[i]){
-            //return true
-            return true;
-        } 
-    }
-    //else return false
-    return false
-}
+// function nonFriends(name, array) {
+//     // create array "arrFriends" for the properties in "friends" of parameter "name"
+//     var arrFriends = name.friends;
+//     // loop through "arrFriends" array
+//     for(var i = 0; i < arrFriends.length; i++){
+//     // if the iteration of array "arrFriends" does not matches a value within the parameter "array":
+//         if(name === object.friends[i]){
+//             //return true
+//             return true;
+//         } 
+//     }
+//     //else return false
+//     return false
+// }
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function updateObject(object, key, value) {
-
-}
+// function updateObject(object, key, value) {
+//     // update parameter "object" with parameters "key" and "value" as a key/value pair
+//     object.key = value;
+// }
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function removeProperties(object, array) {
-
-}
+// function removeProperties(object, array) {
+//     // iterating through the parameter "array"
+//     for (var i = 0; i < array.length; i++){
+//         //if parameter "object" has any of the words iterated in the "array" parameter as keys
+//         if (array[i] === ("key" in object);)
+//      // remove the word itereated in the "array" parameter
+//      delete object.array[i];
+//     }
+// }
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
