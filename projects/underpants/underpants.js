@@ -13,7 +13,7 @@ var _ = {};
 * Implement each function below its instructions
 */
 
-/** _.identity
+/** _.identity 1
 * Arguments:
 *   1) Any value
 * Objectives:
@@ -27,7 +27,7 @@ _. identity = function(value) {
     return value;
 }
 
-/** _.typeOf
+/** _.typeOf 2
 * Arguments:
 *   1) Any value
 * Objectives:
@@ -57,7 +57,7 @@ _.typeOf = function (value) {
     }
 }
 
-/** _.first
+/** _.first 3
 * Arguments:
 *   1) An array
 *   2) A number
@@ -95,7 +95,7 @@ _.first = function (arr, num) {
     }
 }
 
-/** _.last
+/** _.last 4
 * Arguments:
 *   1) An array
 *   2) A number
@@ -136,7 +136,7 @@ _.last = function(arr, num) {
     }
 }
 
-/** _.indexOf
+/** _.indexOf 5
 * Arguments:
 *   1) An array
 *   2) A value
@@ -161,7 +161,7 @@ _.indexOf = function (array, value) {
     return -1;
 }
 
-/** _.contains
+/** _.contains 6
 * Arguments:
 *   1) An array
 *   2) A value
@@ -180,7 +180,7 @@ _.contains = function (array, value) {
     return (array.indexOf(value) >= 0) ? true : false;
 }
 
-/** _.each
+/** _.each 7
 * Arguments:
 *   1) A collection
 *   2) A function
@@ -209,7 +209,7 @@ _.each = function (collection, func) {
     }
 }
 
-/** _.unique
+/** _.unique 8
 * Arguments:
 *   1) An array
 * Objectives:
@@ -229,7 +229,7 @@ _.unique = function (array) {
     return answer;
 } 
 
-/** _.filter
+/** _.filter 9
 * Arguments:
 *   1) An array
 *   2) A function
@@ -255,7 +255,7 @@ _.filter = function (array, func) {
     return answer;
 }
 
-/** _.reject
+/** _.reject 10
 * Arguments:
 *   1) An array
 *   2) A function
@@ -278,7 +278,7 @@ _.reject = function (array, func) {
     return answer;
 }
 
-/** _.partition
+/** _.partition 11
 * Arguments:
 *   1) An array
 *   2) A function
@@ -313,7 +313,7 @@ _.partition = function (array, func) {
     return answerArr;
 }
 
-/** _.map
+/** _.map 12
 * Arguments:
 *   1) A collection
 *   2) a function
@@ -343,7 +343,7 @@ _.map = function (collection, func) {
     return answer;
 }
 
-/** _.pluck
+/** _.pluck 13
 * Arguments:
 *   1) An array of objects
 *   2) A property
@@ -360,7 +360,7 @@ _.pluck = function (array, property) {
     });
   }
 
-/** _.every
+/** _.every 14
 * Arguments:
 *   1) A collection
 *   2) A function
@@ -417,7 +417,7 @@ _.every = function (collection, func) {
     }
 }
 
-/** _.some
+/** _.some 15
 * Arguments:
 *   1) A collection
 *   2) A function
@@ -466,7 +466,7 @@ _.some = function (collection, func) {
         } else if (Array.isArray(collection) !== true) {
             for (var key in collection) {
                 if (func(collection[key], key, collection) === true){
-                    return ture;
+                    return true;
                 }
             }
             return false;
@@ -474,7 +474,7 @@ _.some = function (collection, func) {
     }
 }
 
-/** _.reduce
+/** _.reduce 16
 * Arguments:
 *   1) An array
 *   2) A function
@@ -493,10 +493,23 @@ _.some = function (collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function (array, func, seed) {
+    if (seed === null) {
+        var call = array[0];
+        for (var i = 1; i < array.length; i++) {
+            call = func(call, array[i], i);
+            }
+        return call;
+    } else {
+        var call = seed
+        for (var i = 0; i < array.length; i++) {
+            call = func(call, array[i], i);
+            }
+        return call;
+    }
+}
 
-
-
-/** _.extend
+/** _.extend 17
 * Arguments:
 *   1) An Object
 *   2) An Object
@@ -510,6 +523,14 @@ _.some = function (collection, func) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(object1) {
+    var args = Array.from(arguments);
+    for (var i = 1; i < args.length; i++) {
+        Object.assign(object1, args[i]);
+    }
+    return object1;
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
