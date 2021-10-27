@@ -354,7 +354,11 @@ _.map = function (collection, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-// _.pluck = function (array, 
+_.pluck = function (array, property) {
+    return array.map(function(obj) {
+      return obj[property];
+    });
+  }
 
 /** _.every
 * Arguments:
@@ -377,6 +381,41 @@ _.map = function (collection, func) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function (collection, func) {
+    if (func === undefined || null) {
+        if (Array.isArray(collection) === true) {
+            for (var i = 0; i < collection.length; i++) {
+                if (collection[i] === false) {
+                    return false;
+                }
+            }
+            return true;
+        } else if (Array.isArray(collection) !== true) {
+            for (var key in collection) {
+                if (collection.key ===false){
+                    return false;
+                }
+            }
+            return true;
+        }   
+    } else {
+        if (Array.isArray(collection) === true) {
+            for (var i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection) === false) {
+                    return false;
+                }
+            }
+            return true;
+        } else if (Array.isArray(collection) !== true) {
+            for (var key in collection) {
+                if (func(collection[key], key, collection) === false){
+                    return false;
+                }
+            }
+            return true;
+        }  
+    }
+}
 
 /** _.some
 * Arguments:
@@ -399,6 +438,41 @@ _.map = function (collection, func) {
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function (collection, func) {
+    if (func === undefined || null) {
+        if (Array.isArray(collection) === true) {
+            for (var i = 0; i < collection.length; i++) {
+                if (collection[i] === true) {
+                    return true;
+                }
+            }
+            return false;
+        } else if (Array.isArray(collection) !== true) {
+            for (var key in collection) {
+                if (collection.key ===true){
+                    return true;
+                }
+            }
+            return false;
+        }   
+    } else {
+        if (Array.isArray(collection) === true) {
+            for (var i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection) === true) {
+                    return true;
+                }
+            }
+            return false;
+        } else if (Array.isArray(collection) !== true) {
+            for (var key in collection) {
+                if (func(collection[key], key, collection) === true){
+                    return ture;
+                }
+            }
+            return false;
+        }  
+    }
+}
 
 /** _.reduce
 * Arguments:
@@ -418,6 +492,8 @@ _.map = function (collection, func) {
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+
+
 
 
 /** _.extend
