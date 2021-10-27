@@ -48,47 +48,54 @@ function makeContact(id, nameFirst, nameLast) {
 
 //create a factory function “makeContactList”
 function makeContactList(id, nameFirst, nameLast) {
-    //create an array "contacts" to hold "contact" objects
+    //create an array <contactList> to hold contacts
     var contactList = [];
     //returns an object that manages contacts
     return {
         id: id,
         nameFirst: nameFirst,
         nameLast: nameLast,
-        // include function “length()” 
+        // create function <length()> 
         length:function() {
-            // which returns the number of "contact" objects within array "contactList"
+            //return length of array <contactList>
             return contactList.length;
         },
-        //include “findContact(fullName)” - takes full name string and 
-        addContact: function()) {
-            //returns "contact" object if fullName is found in array "contactList"
-            contacts.push(contact); 
-            //returns undefined if fullName is not found in array "contactList"
+        // create function <addContact(contact)>
+        addContact: function (contact) {
+            // push object <contact> into array <contactList>
+            contactList.push(contact);
         },
-        // "removeContact(contact)”
-         2: function() {
-            //code for method
-        }
-
+        // create function <findContact(contact)>
+        findContact: function (fullName) {
+            // loop through array <contactList>
+            for (var i = 0; i < contactList.length; i++) {
+                if (`${contactList[i].nameFirst} ${contactList[i].lastName}` == `${fullName}`) {
+                    return contactList[i];
+                } else {
+                    return undefined;
+                }
+            }
+        },
+        // create function <removeContact(contact)>
+        removeContact: function (contact) {
+            // loop through array <contactList>
+            for (var i = 0; i < contactList.length; i++) {
+                if (contactList[i].id === contact) {
+                    delete contactList[i];
+                }
+            }
+        },
+        // create function <printAllContactNames()>
+        printAllContactNames: function () {
+            // loop through array <contactList>
+            for (var i = 0; i < contactList.length; i++) {
+                console.log(`${constactList[i].nameFirst} ${contactList[i].lastName}`);
+            }
+        },
     }
-    }
-    
-    return {
-        // we implemented the length api for you //
-        length: function() {
-            return contacts.length;
-        }
-    }
-}
-
-
-
 
 // YOUR CODE GOES ABOVE HERE //
-
-
-
+}
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

@@ -24,26 +24,24 @@
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
-   //create a new array to hold new output
-   var outputArr = [];   
-   //create an if statement to determin if the first number is higher or lower
- if (start < end) {    
-   //create a for loop to run through the range of numbers forwards if lower
-   for (var i = start; i <= end; i++){  
-     //populate outputArr with numbers between num1-num2 using push method at each iteration
-     outputArr.push(i);
-   }    
- //create an if statement to determin if the first number is higher or lower
- if (start > end) {    
-   //create a for loop to run through the range of numbers forwards if lower
-   for (var i = end; i >= start; i--){  
-     //populate outputArr with numbers between end-start using push method at each iteration
-     outputArr.push(i);
-   }     
+  //create a new array to hold new output
+  var outputArr = [];   
+  //create an if statement to determin if the first number is higher or lower
+  if (start < end) {    
+    //create a for loop to run through the range of numbers forwards if lower
+    for (var i = start; i <= end; i++){  
+      //populate outputArr with numbers between num1-num2 using push method at each iteration
+      outputArr.push(i);
+    }   
+  } else if (start > end) {    
+    //create a for loop to run through the range of numbers forwards if lower
+    for (var i = start; i >= end; i--){  
+      //populate outputArr with numbers between num1-num2 using push method at each iteration
+      outputArr.push(i);
+    } 
+  }
  //return output array variable
  return outputArr;
- }
-}   
 
     // YOUR CODE GOES ABOVE HERE //
 }

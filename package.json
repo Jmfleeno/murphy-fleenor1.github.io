@@ -1,0 +1,26 @@
+{
+  "name": "lodown-jmfleeno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "istanbul cover _mocha -- test/ -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jmfleeno/murphy-fleenor1.github.io.git"
+  },
+  "author": "Murphy Fleenor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jmfleeno/murphy-fleenor1.github.io/issues"
+  },
+  "homepage": "https://github.com/Jmfleeno/murphy-fleenor1.github.io#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "i": "^0.3.7",
+    "istanbul": "^0.4.5",
+    "mocha": "^9.1.3",
+    "sinon": "^11.1.2"
+  }
+}

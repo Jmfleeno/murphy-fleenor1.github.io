@@ -49,9 +49,9 @@ function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
    
    //return a function with parameters "startsWith" and "string" 
-   return function(startsWith, string){
+   return function(string){
        //function returns if startsWith is strictly equal to the last index of string
-       return startsWith. === string[0]; 
+       return startsWith.toLowerCase() === string[0].toLowerCase(); 
    }
 
     // YOUR CODE ABOVE HERE //
@@ -66,9 +66,9 @@ function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
    //return a function with parameters "startsWith" and "string" 
-   return function(startsWith, string){
+   return function(string){
        //function returns if startsWith is strictly equal to the last index of string 
-       return startsWith === string[string.length-1]; 
+       return endsWith.toLowerCase() === string[string.length-1].toLowerCase(); 
    }
     
     // YOUR CODE ABOVE HERE //
@@ -84,8 +84,14 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    //create array to hold output
+    var output = [];
+    // loop through array <strings>
+    for (var i = 0; i < strings.length; i++) {
+        // push all 
+        output.push(modify(strings[i]));
+    }
+    return output;
     
     // YOUR CODE ABOVE HERE //
 }
@@ -101,9 +107,13 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    var i = 0;
+    var boolean = true;
+    while (boolean === true && i < strings.length) {
+      boolean = test(strings[i]);
+      i++;
+    }
+    return boolean;
     
     // YOUR CODE ABOVE HERE //
 }

@@ -127,11 +127,11 @@ function getRandom(arr) {
   return Math.floor(Math.random() * arr.length);
 };
 //push a random value from array "animals" in the array "friends" using the function "getRandom"
-friends.push(animals[getRandom(animals)].name;
+friends.push(animals[getRandom(animals)].name);
 //print array "friends"
 console.log(friends);
 //add array "friends" as a property of object "duck" under the key "friends"
-animals[getRandom(animals)].friends = "friends";
+animals[getRandom(animals)].friends = friends;
 
 
 /**

@@ -14,15 +14,16 @@
 //////////////////////////////////////////////////////////////////////
 
 //create function "search" with paramaters "animalArr" and "animalStr"
-// function search (animalArr, animalStr){
-//     //iterate through parameter "animalArr" to find parameter "animalStr"
-//     for (var i = 0; i < Array.length; i++) {
-//         if (array[i].name === string) {
-//             return array[i];
-//         }
-//     }
-//     return null;
-// }
+function search (animalArr, animalStr){
+    //iterate through parameter "animalArr" to find parameter "animalStr"
+    for (var i = 0; i < Array.length; i++) {
+        if (array[i].name === string) {
+            return array[i];
+        }
+    }
+    return null;
+}
+
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

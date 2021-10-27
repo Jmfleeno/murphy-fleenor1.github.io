@@ -3,7 +3,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
-const { AssertionError } = require("chai");
+// const { AssertionError } = require("chai");
 
 var _ = {};
 
@@ -79,7 +79,7 @@ _.first = function (arr, num) {
     var answer = [];
     if (Array.isArray(arr) === false) {
         return answer;
-    } else if (num === undefined || typeof(num) !== "number" || num === NaN) {
+    } else if (num === null || typeof(num) !== "number" || num === NaN) {
         return arr[0];
     } else {
         if (num === 1){
@@ -354,12 +354,7 @@ _.map = function (collection, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-_.pluck = function (objArr, property) {
-    var answer = [];
-    for (var i = 0; i < objArr.length; i++) {
-    answer[i] = .map(objArr[i], );
-    }
-}
+// _.pluck = function (array, 
 
 /** _.every
 * Arguments:
