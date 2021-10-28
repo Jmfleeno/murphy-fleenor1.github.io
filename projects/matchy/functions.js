@@ -16,9 +16,9 @@
 //create function "search" with paramaters "animalArr" and "animalStr"
 function search (animalArr, animalStr){
     //iterate through parameter "animalArr" to find parameter "animalStr"
-    for (var i = 0; i < Array.length; i++) {
-        if (array[i].name === string) {
-            return array[i];
+    for (var i = 0; i < animalArr.length; i++) {
+        if (animalArr[i].name === animalStr) {
+            return animalArr[i];
         }
     }
     return null;
@@ -31,8 +31,8 @@ function search (animalArr, animalStr){
 //create function <replace> with parameters <(animals, name, replacement)>
 function replace (animals, name, replacement) {
     for (var i = 0; i < animals.length; i++) {
-        if (animal[i] === name) {
-            animal[i] === replacement;
+        if (animals[i].name === name) {
+            animals[i].name === replacement;
         }
     }
 }
@@ -43,8 +43,8 @@ function replace (animals, name, replacement) {
 //create function <remove> with parameters <(animals, name)>
 function remove (animals, name) {
     for (var i = 0; i < animals.length; i++) {
-        if (animal[i] === name) {
-            delete animal[i];
+        if (animals[i] === name) {
+            delete animals[i];
         }
     }
 }

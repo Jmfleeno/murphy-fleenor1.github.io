@@ -160,7 +160,6 @@ function nonFriends(name, array) {
     for(var i = 0; i < arrNonFriends.length; i++){
     // if the iteration of array "arrFriends" does not matches a value within the parameter "array":
         if(name !== array[i].name){
-            //return true
             if (array[i].includes(name) === false) {
                 arrNonFriends.push(array[i]);
             }

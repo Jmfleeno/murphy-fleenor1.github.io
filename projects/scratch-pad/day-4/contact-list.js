@@ -21,7 +21,8 @@
  *         undefined if the fullName does not match any contacts in the list.
  *      4. removeContact(contact): takes a contact object to be removed from 
  *         the contact-list.
- *      5. add a printAllContactNames() Function to your makeContactList() factory. The printAllContactNames() Function should 
+ *      5. add a printAllContactNames() Function to your makeContactList() factory. 
+ *      The printAllContactNames() Function should 
  *         return a String formated with all the full-names of the separated 
  *         with a line-break, like so:
  *          
@@ -63,16 +64,14 @@ function makeContactList(id, nameFirst, nameLast) {
         // create function <addContact(contact)>
         addContact: function (contact) {
             // push object <contact> into array <contactList>
-            contactList.push(contact);
+            return contactList.push(contact);
         },
         // create function <findContact(contact)>
         findContact: function (fullName) {
             // loop through array <contactList>
             for (var i = 0; i < contactList.length; i++) {
-                if (`${contactList[i].nameFirst} ${contactList[i].lastName}` == `${fullName}`) {
+                if (fullName === contactList[i]["nameFirst"] + " " + contactList[i]["nameLast"]) {
                     return contactList[i];
-                } else {
-                    return undefined;
                 }
             }
         },
@@ -80,17 +79,23 @@ function makeContactList(id, nameFirst, nameLast) {
         removeContact: function (contact) {
             // loop through array <contactList>
             for (var i = 0; i < contactList.length; i++) {
-                if (contactList[i].id === contact) {
-                    delete contactList[i];
+                if (contactList[i] === contact) {
+                    return contactList.splice(i, 1);
                 }
             }
         },
         // create function <printAllContactNames()>
         printAllContactNames: function () {
+            var outputStr = "";
             // loop through array <contactList>
             for (var i = 0; i < contactList.length; i++) {
-                console.log(`${constactList[i].nameFirst} ${contactList[i].lastName}`);
+                if (i < contactList.length-1){
+                    outputStr += (`${contactList[i].nameFirst} ${contactList[i].nameLast}\n`);
+                } else {
+                    outputStr += (`${contactList[i].nameFirst} ${contactList[i].nameLast}`);
+                }   
             }
+            return outputStr;
         },
     }
 

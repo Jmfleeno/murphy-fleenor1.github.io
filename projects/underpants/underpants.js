@@ -494,7 +494,7 @@ _.some = function (collection, func) {
 */
 
 _.reduce = function (array, func, seed) {
-    if (seed === null) {
+    if (seed === undefined) {
         var call = array[0];
         for (var i = 1; i < array.length; i++) {
             call = func(call, array[i], i);
