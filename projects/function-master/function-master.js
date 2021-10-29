@@ -25,9 +25,9 @@ function valuesToString(object) {
         if (typeof object[key] === "string"){
             valArr.push(object[key]);
         }
-        } 
-        return valArr.join(" ");
     } 
+    return valArr.join(" ");
+} 
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
@@ -155,17 +155,17 @@ function isFriend(name, object) {
 
 function nonFriends(name, array) {
     // create array "arrFriends" for the properties in "friends" of parameter "name"
-    var arrNonFriends = name.friends;
+    var arrNonFriends = [];
     // loop through "arrFriends" array
-    for(var i = 0; i < arrNonFriends.length; i++){
+    for(var i = 0; i < array.length; i++){
     // if the iteration of array "arrFriends" does not matches a value within the parameter "array":
         if(name !== array[i].name){
-            if (array[i].includes(name) === false) {
+            if (array[i].friends.includes(name) === false) {
                 arrNonFriends.push(array[i]);
             }
         } 
     }
-    //else return false
+    //return output array
     return arrNonFriends
 }
 

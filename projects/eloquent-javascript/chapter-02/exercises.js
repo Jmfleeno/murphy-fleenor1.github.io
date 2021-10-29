@@ -3,9 +3,11 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles(){
-  for(var i = "#"; i.length <= 7; i += "#"){
-    console.log(i);
+function triangles(input){
+  var output = "";
+  for(var i = 0; i < input; i++){
+    output += "#";
+    console.log(output);
   }
 }
 
@@ -14,13 +16,13 @@ function triangles(){
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  for (let number = 1; number <= 100; number++) {
+  for (let number = 1; number <= 15; number++) {
     if(number % 3 === 0 && number % 5 === 0){
-      console.log("FizzBuzz");
+      console.log("fizzbuzz");
     } else if(number % 3 === 0){
-      console.log("Fizz");
+      console.log("fizz");
     } else if(number % 5 === 0){
-      console.log("Buzz");
+      console.log("buzz");
     } else {
       console.log(number);
     }
@@ -31,13 +33,11 @@ function fizzBuzz() {
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-let exSize = 8;
-let chessBoard = "";
-
-function drawChessboard(size, board) {
-  for (let y = 0; y < size; y++){
-    for (let x = 0; x < size; x++){
-      if ((x + y) % 2 == 0){
+function drawChessboard(size) {
+  var board = "";
+  for(let y = 0; y < size; y++){
+    for(let x = 0; x < size; x++){
+      if((x + y) % 2 == 0){
         board += " ";
       } else {
         board += "#";
@@ -45,9 +45,8 @@ function drawChessboard(size, board) {
     }
   board += "\n";
   }
+  console.log(board);
 }
-drawChessboard(8, chessBoard);
-console.log(chessBoard);
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
