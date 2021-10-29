@@ -153,20 +153,27 @@ function isFriend(name, object) {
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function nonFriends(name, array) {
-    // create array "arrFriends" for the properties in "friends" of parameter "name"
-    var arrNonFriends = [];
-    // loop through "arrFriends" array
-    for(var i = 0; i < array.length; i++){
-    // if the iteration of array "arrFriends" does not matches a value within the parameter "array":
-        if(name !== array[i].name){
-            if (array[i].friends.includes(name) === false) {
-                arrNonFriends.push(array[i]);
-            }
-        } 
+function nonFriends(name, arr){
+    var nameList = [];
+    var result = [];
+    var current = null;
+    for(var i=0; i<arr.length; i++){
+        if(name === arr[i].name){
+            current = arr[i];
+        }else{
+            nameList.push(arr[i].name);
+        }
     }
-    //return output array
-    return arrNonFriends
+    if(current === null){
+        return nameList;
+    }
+    for(var i=0; i<nameList.length; i++){
+        if(current.friends.indexOf(nameList[i]) == -1){
+            result.push(nameList[i]);
+        }
+    }
+    return result;
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -175,7 +182,8 @@ function nonFriends(name, array) {
 
 function updateObject(object, key, value) {
     // update parameter "object" with parameters "key" and "value" as a key/value pair
-    object.key = value;
+    object[key] = value;
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -186,11 +194,12 @@ function removeProperties(object, array) {
     // iterate through the parameter "array"
     for (var i = 0; i < array.length; i++){
         //if parameter "object" has any of the words iterated in the "array" parameter as keys
-        if (object.includes(array[i])) {
+        if (object.hasOwnProperty(array[i])) {
             // remove the word itereated in the "array" parameter
-            delete object.array[i];
+            delete object[array[i]];
         }
     }
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////

@@ -43,8 +43,8 @@ function replace (animals, name, replacement) {
 //create function <remove> with parameters <(animals, name)>
 function remove (animals, name) {
     for (var i = 0; i < animals.length; i++) {
-        if (animals[i] === name) {
-            delete animals[i];
+        if (animals[i]["name"] === name) {
+             animals.splice(animals[i]);
         }
     }
 }
