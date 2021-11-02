@@ -32,9 +32,10 @@ function search (animalArr, animalStr){
 function replace (animals, name, replacement) {
     for (var i = 0; i < animals.length; i++) {
         if (animals[i].name === name) {
-            animals[i].name === replacement;
+            animals[i] = replacement;
         }
     }
+    return animals;
 }
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
@@ -55,16 +56,21 @@ function remove (animals, name) {
 
 //create function <add> with parameters <(aminals, animal)>
 function add (animals, animal) {
-    if (animal.name.length > 0) {
-        if (animal.species.length > 0) {
-            for (var i = 0; i < animals.length; i++) {
-                if (animals[i].name !== animal.name)
-                    animals.push.animal;
-            }
+    let flag = true;
+    if (animal["name"].length > 0) {
+      if (animal["species"].length > 0) {
+        for (var i = 0; i < animals.length; i++) {
+          if (animals[i]["name"] === animal["name"]) {
+            flag = false;
+          }
         }
-    } 
-}
-
+        if (flag) {
+          animals.push(animal);
+        }
+      } 
+    }
+    return animals;
+  }
 /**
  * You did it! You're all done with Matchy!
  */

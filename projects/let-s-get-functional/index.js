@@ -23,34 +23,48 @@ const { filter } = require('lodash');
  */
 
 var maleCount = function(array) {
-    var men = filter(array, function(customer, {array[i].gender === "male"}));
-    retrun men.length;
+    var men = _.filter(array, function(array, function(element){
+      if (element.gender === "male"){
+        return true
+      } else {
+        return false
+      }
+    });
+    return men.length;
 };
 
 var femaleCount = function(array) {
-    var women = filter(array, function(customer, {array[i].gender === "female"}));
-    return reduce(women);
+  var women = _.filter(array, function(array, function(element){
+    if (element.gender === "female"){
+      return true
+    } else {
+      return false
+    }
+  });
+  return women.length;
 };
 
 var oldestCustomer = function(array){
-  var oldest = array[0];
-  for(var i = 1; i < array.length; i++){
-    if(array[i].age > oldest.age){
-      oldest = array[i]
+  var oldest = _.reduce(array, function(previous, current){
+    if (previous.age < current age) {
+      return current;
+    } else {
+      return previous;
     }
-  }
-  return oldest;
-};
+  });
+  return oldestCustomer.name;
+}
 
 var youngestCustomer = function(array){
-  var youngest = array[0];
-  for(var i = 1; i < array.length; i++){
-    if(array[i].age < youngest.age){
-      youngest = array[i]
+  var oldest = _.reduce(array, function(previous, current){
+    if (previous.age < current age) {
+      return current;
+    } else {
+      return previous;
     }
-  }
-  return youngest;
-};
+  });
+  return oldestCustomer.name;
+}
 
 var averageBalance = function(array){
     var average = 0;
