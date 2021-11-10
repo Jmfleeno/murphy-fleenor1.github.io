@@ -2,35 +2,29 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range(start, end, step) {
-  let output = [];
-  if (step < 1) {
-    return [];
-  } else if (start > end){
-    for (let i = start; i >= end; i -= step){
-      output.push(i);
-    }
-  } else if (start < end) {
-    for (let i = start; i <= end; i += step){
-      output.push(i);
-    }
+
+var range = function(start, end, step) {
+  var arr = [];
+  if (start === end){
+    return arr;
   }
-  return output;
-}
+  for (var i = start; step > 1 || step === undefined ? i <= end : i >= end; step ? i = i + step : i++)
+      arr.push(i);
+  return arr;
+};
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum(array) {
-  if (array = 0) {
-    return 0;
+function sum (arr){
+  var arrSum = 0;
+  for (var i = 0; i<arr.length; i++){
+  arrSum += arr[i];
   }
-  let output = 0;
-  for (let i = array[0]; i < array[array.length-1]; i++){
-    sum += array[i]
-  }
-  return output;
+  return arrSum;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -93,24 +87,46 @@ function listToArray(list) {
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend() {
-
+function prepend (element, list){
+  var newList = {value: element, rest: list};
+  return newList;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function nth() {
-
+function nth (list, num){
+	var listArray = listToArray(list);
+    return listArray[num];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(a, b) {
+  //first compare with triple equals to see if the two are the same type and value
+  if (a === b) return true;
+  //second if statement checks for null values and non-objects
+  if (a == null || typeof a != "object" ||
+      b == null || typeof b != "object")
+    return false;
+  //declare counters
+  var propsInA = 0, propsInB = 0;
+	//for-in loop counts the number of properties in a and b
+  for (var prop in a)
+    propsInA += 1;
 
+  for (var prop in b) {
+    propsInB += 1;
+    //if b has a prop not in a or if, upon recursive function all,
+    //the properties don't have the same values, return false
+    if (!(prop in a) || !deepEqual(a[prop], b[prop]))
+      return false;
+  }
+	//otherwise, return whether the number of properties are the same
+  return propsInA == propsInB;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
