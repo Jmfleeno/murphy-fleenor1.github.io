@@ -4,7 +4,7 @@
 
 var customers = require('./data/customers.json');
 var _ = require("underbar");
-const { filter } = require('lodash');
+// const { filter } = require('lodash');
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -23,7 +23,7 @@ const { filter } = require('lodash');
  */
 
 var maleCount = function(array) {
-    var men = _.filter(array, function(array, function(element){
+    var men = _.filter(array, function(element){
       if (element.gender === "male"){
         return true
       } else {
@@ -34,7 +34,7 @@ var maleCount = function(array) {
 };
 
 var femaleCount = function(array) {
-  var women = _.filter(array, function(array, function(element){
+  var women = _.filter(array, function(element){
     if (element.gender === "female"){
       return true
     } else {
@@ -46,48 +46,62 @@ var femaleCount = function(array) {
 
 var oldestCustomer = function(array){
   var oldest = _.reduce(array, function(previous, current){
-    if (previous.age < current age) {
+    if (previous.age < current.age) {
       return current;
     } else {
       return previous;
     }
   });
-  return oldestCustomer.name;
+  return oldest.name;
 }
 
 var youngestCustomer = function(array){
-  var oldest = _.reduce(array, function(previous, current){
-    if (previous.age < current age) {
+  var youngest = _.reduce(array, function(previous, current){
+    if (previous.age > current.age) {
       return current;
     } else {
       return previous;
     }
   });
-  return oldestCustomer.name;
+  return youngest.name;
 }
 
-var averageBalance = function(array){
-    var average = 0;
-
-    return average;
+var averageBalance = function(array){ 
+  var customerBalanceArr = _.map(array, customer => customer.balance);
+  var customerNum = _.reduce(array, (total, customer) => {
+    total += 1;
+    return total;
+  }, 0);
+  var averageCustomerBalance = customerBalanceArr/customerNum
+  return averageCustomerBalance;
 };
 
 var firstLetterCount = function(array, letter){
-    var count = 0;
-
-    return count;
-};
+    var nameList = _.filter(array, (customer, letter) => {
+      if(customer.name[0].toUpperCase() === letter.toUpperCase()){
+        return true;
+      } else {
+        return false;
+      }
+    });
+  return nameList.length;
+}
 
 var friendFirstLetterCount = function (array, customer, letter){
-    var count = 0;
-    var friendCount = 0;
-
-    return friendCount;
+  let customerFriends = customer.friends
+  let customerFriendsWithFirstLetter = _.map(customerFriends, (friend, letter) => {
+    if (friend.name[0].toUpperCase() = letter.toUpperCase()){
+      return true;
+    } else {
+      return false;
+    }
+  });
+  return customerFriendsWithFirstLetter.length;
 };
 
 var friendsCount = function(array, name){
-    var friendsOf = [];
-
+    var friendsOf = array.filter(function(customer){
+    });
     return friendsOf;
 };
 
